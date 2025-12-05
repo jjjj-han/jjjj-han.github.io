@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓漫列表</title>
+
+    <style>
+        body {
+            background: #f7f7f7;
+            padding: 30px;
+            font-family: "Noto Sans TC", sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.2s;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .item:hover {
+            transform: scale(1.03);
+        }
+
+        .item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .item .title {
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        a.back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #0077cc;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+
+<a href="index.html" class="back">← 返回首頁</a>
+<h1>韓漫作品列表</h1>
+
+<div class="grid">
+
+    <a class="item" href="#" target="_blank">
+        <img src="https://picsum.photos/300/400?random=30">
+        <div class="title">韓漫作品 1</div>
+    </a>
+
+    <a class="item" href="#" target="_blank">
+        <img src="https://picsum.photos/300/400?random=31">
+        <div class="title">韓漫作品 2</div>
+    </a>
+
+</div>
+
+</body>
+</html>
