@@ -7,41 +7,44 @@
 
     <style>
         body {
-            background: #f7f7f7;
+            background: #fafafa;
             padding: 30px;
             font-family: "Noto Sans TC", sans-serif;
         }
 
         a.back {
             text-decoration: none;
+            color: #0066cc;
             font-size: 18px;
-            color: #0077cc;
-            display: inline-block;
-            margin-bottom: 20px;
         }
 
         h1 {
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 20px;
         }
 
         .item {
-            background: white;
+            background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             overflow: hidden;
             text-decoration: none;
-            color: black;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
         }
 
         .item img {
             width: 100%;
-            height: 230px;
+            height: 200px;
             object-fit: cover;
         }
 
@@ -50,7 +53,6 @@
             text-align: center;
         }
     </style>
-
 </head>
 
 <body>
@@ -60,13 +62,16 @@
 
 <div class="grid">
 
-    <！-- 你可以自行新增作品-->
-    <！ーー
-	‹div class="item">
-		<img src="你的圏片.jpg">
-		<div class="title">作品名稱</div>
-    </div>#
-	--＞
+    <!-- 範例作品（你可以自行替換圖片與作品名稱） -->
+    <a class="item" href="#">
+        <img src="https://picsum.photos/300/400?random=1">
+        <div class="title">作品名稱 1</div>
+    </a>
+
+    <a class="item" href="#">
+        <img src="https://picsum.photos/300/400?random=2">
+        <div class="title">作品名稱 2</div>
+    </a>
 
 </div>
 
