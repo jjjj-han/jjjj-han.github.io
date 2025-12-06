@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>漫畫收藏首頁</title>
+    <title>漫畫分類首頁</title>
 
     <style>
         * {
@@ -22,106 +22,83 @@
             display: flex;
             gap: 40px;
             justify-content: center;
+            align-items: flex-start;
         }
 
-        .box {
+        /* 介紹區塊調整：變寬、文字換行 */
+        .intro {
+            width: 350px; /* ★ 加寬 */
+            min-height: 600px;
+            padding: 30px;
             background: #fff;
             border-radius: 16px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .intro {
-            width: 250px;
-            height: 600px;
-            padding: 20px;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            word-break: break-word; /* ★ 自動換行 */
         }
 
         .intro h2 {
+            font-size: 26px;
             margin-bottom: 20px;
-            font-size: 24px;
         }
 
         .intro p {
-            line-height: 1.7;
-            color: #444;
+            line-height: 1.8;
+            font-size: 17px;
         }
 
+        /* 網格六格 */
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 250px);
-            grid-template-rows: repeat(2, 250px);
-            gap: 40px;
+            grid-template-columns: repeat(3, 220px);
+            grid-template-rows: repeat(2, 220px);
+            gap: 30px;
         }
 
-        .photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* 六格素色區塊 */
+        .box {
+            background: #ffffff; /* ★ 素色框 */
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
         }
 
-        .label {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0,0,0,0.5);
-            color: #fff;
-            text-align: center;
-            padding: 6px 0;
-            font-size: 18px;
+        .box:hover {
+            transform: scale(1.05);
         }
+
     </style>
 </head>
+
 <body>
 
 <div class="container">
 
-    <section class="intro box">
+    <!-- 左側介紹 -->
+    <section class="intro">
         <h2>介紹</h2>
         <p>
-            歡迎來到我的漫畫收藏首頁！<br>
-            目前分類區塊不能點選，如果您需要後續開放連結，我可以再協助。
+            歡迎來到我的漫畫收藏主頁！  
+            這裡整理了我喜歡的漫畫類型，包含韓漫、熱血王道、運動、少女、推理以及其他類型。
+            點擊右側分類，就能進入該分類頁，查看更多作品內容！
         </p>
     </section>
 
+    <!-- 右側六格分類 -->
     <section class="grid">
 
-        <div class="box">
-            <img class="photo" src="https://picsum.photos/400/400?random=10">
-            <div class="label">韓漫</div>
-        </div>
-
-        <div class="box">
-            <img class="photo" src="https://picsum.photos/400/400?random=11">
-            <div class="label">熱血王道</div>
-        </div>
-
-        <div class="box">
-            <img class="photo" src="https://picsum.photos/400/400?random=12">
-            <div class="label">運動</div>
-        </div>
-
-        <div class="box">
-            <img class="photo" src="https://picsum.photos/400/400?random=13">
-            <div class="label">少女</div>
-        </div>
-
-        <div class="box">
-            <img class="photo" src="https://picsum.photos/400/400?random=14">
-            <div class="label">推理</div>
-        </div>
-
-        <div class="box">
-            <img class="photo" src="https://picsum.photos/400/400?random=15">
-            <div class="label">其他</div>
-        </div>
+        <a class="box" href="korean.html">韓漫</a>
+        <a class="box" href="shonen.html">熱血王道</a>
+        <a class="box" href="sport.html">運動</a>
+        <a class="box" href="shoujo.html">少女</a>
+        <a class="box" href="mystery.html">推理</a>
+        <a class="box" href="others.html">其他</a>
 
     </section>
 
