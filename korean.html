@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>韓漫列表</title>
+    <title>韓漫作品</title>
 
     <style>
         body {
             background: #f7f7f7;
             padding: 30px;
             font-family: "Noto Sans TC", sans-serif;
+        }
+
+        a.back {
+            text-decoration: none;
+            font-size: 18px;
+            color: #0077cc;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -27,58 +35,32 @@
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: 0.2s;
-            color: #000;
-        }
-
-        .item:hover {
-            transform: scale(1.03);
+            text-decoration: none;
+            color: black;
         }
 
         .item img {
             width: 100%;
-            height: 220px;
+            height: 230px;
             object-fit: cover;
         }
 
         .title {
             padding: 10px;
-            font-size: 16px;
             text-align: center;
-        }
-
-        /* 返回首頁 */
-        a.back {
-            display: inline-block;
-            margin-bottom: 20px;
-            text-decoration: none;
-            color: #0077cc;
-            font-size: 16px;
         }
     </style>
 
 </head>
+
 <body>
 
-<!-- 這裡一定會回到 313.html -->
-<a href="313.html" class="back">← 返回首頁</a>
-
-<h1>韓漫作品列表</h1>
+<a class="back" href="313.html">← 返回首頁</a>
+<h1>韓漫作品</h1>
 
 <div class="grid">
 
-    <!-- 你自己放作品即可，這些不會被點選 -->
-    <div class="item">
-        <img src="你的圖片1.jpg">
-        <div class="title">作品名稱 1</div>
-    </div>
-
-    <div class="item">
-        <img src="你的圖片2.jpg">
-        <div class="title">作品名稱 2</div>
-    </div>
-
-    <!-- 要新增作品，複製這段即可 -->
+    <!-- 你可以自行新增作品 -->
     <!--
     <div class="item">
         <img src="你的圖片.jpg">
