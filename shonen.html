@@ -42,15 +42,26 @@
             transform: scale(1.05);
         }
 
-        .item img {
+        /* 圖片外框：固定 3:4 長分型 */
+        .cover {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            aspect-ratio: 3 / 4;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* 圖片本身：完整顯示、不裁切 */
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .title {
             padding: 10px;
             text-align: center;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -62,32 +73,41 @@
 
 <div class="grid">
 
-    <!-- 範例作品（你可以自行替換圖片與作品名稱） -->
     <a class="item" href="#">
-        <img src="https://media.vogue.com.tw/photos/64b4e5b1f1d4182137062b47/2:3/w_2560%2Cc_limit/%25E5%2592%2592%25E8%25A1%2593%25E5%259B%259E%25E6%2588%25B0.jpeg">
+        <div class="cover">
+            <img src="https://media.vogue.com.tw/photos/64b4e5b1f1d4182137062b47/2:3/w_2560%2Cc_limit/%25E5%2592%2592%25E8%25A1%2593%25E5%259B%259E%25E6%2588%25B0.jpeg" alt="咒術迴戰">
+        </div>
         <div class="title">咒術迴戰</div>
     </a>
 
     <a class="item" href="#">
-        <img src="https://p2.bahamut.com.tw/B/2KU/96/63dfddd12c487e33aad500e4881sv6k5.PNG?v=1737355061684">
+        <div class="cover">
+            <img src="https://p2.bahamut.com.tw/B/2KU/96/63dfddd12c487e33aad500e4881sv6k5.PNG?v=1737355061684" alt="坂本日常">
+        </div>
         <div class="title">坂本日常</div>
     </a>
 
-     <a class="item" href="#">
-        <img src="https://picsum.photos/300/400?random=2">
+    <a class="item" href="#">
+        <div class="cover">
+            <img src="https://picsum.photos/300/400?random=2" alt="作品名稱 2">
+        </div>
         <div class="title">作品名稱 2</div>
     </a>
 
-     <a class="item" href="#">
-        <img src="https://picsum.photos/300/400?random=2">
-        <div class="title">作品名稱 2</div>
+    <a class="item" href="#">
+        <div class="cover">
+            <img src="https://picsum.photos/300/400?random=3" alt="作品名稱 3">
+        </div>
+        <div class="title">作品名稱 3</div>
     </a>
 
-     <a class="item" href="#">
-        <img src="https://picsum.photos/300/400?random=2">
-        <div class="title">作品名稱 2</div>
+    <a class="item" href="#">
+        <div class="cover">
+            <img src="https://picsum.photos/300/400?random=4" alt="作品名稱 4">
+        </div>
+        <div class="title">作品名稱 4</div>
     </a>
-    
+
 </div>
 
 </body>
