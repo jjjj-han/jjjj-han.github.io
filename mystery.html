@@ -42,15 +42,26 @@
             transform: scale(1.05);
         }
 
-        .item img {
+        /* 圖片外框：固定 3:4 長分型 */
+        .cover {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            aspect-ratio: 3 / 4;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* 圖片本身：完整顯示、不裁切 */
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .title {
             padding: 10px;
             text-align: center;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -62,18 +73,23 @@
 
 <div class="grid">
 
-    <!-- 範例作品（你可以自行替換圖片與作品名稱） -->
     <a class="item" href="#">
-        <img src="https://p2.bahamut.com.tw/B/2KU/99/a70cedf0d7403b3fed69c06e241pvgv5.JPG">
+        <div class="cover">
+            <img src="https://p2.bahamut.com.tw/B/2KU/99/a70cedf0d7403b3fed69c06e241pvgv5.JPG" alt="名偵探柯南">
+        </div>
         <div class="title">名偵探柯南</div>
     </a>
 
     <a class="item" href="#">
-        <img src="https://picsum.photos/300/400?random=2">
+        <div class="cover">
+            <img src="https://picsum.photos/300/400?random=2" alt="作品名稱 2">
+        </div>
         <div class="title">作品名稱 2</div>
     </a>
 
 </div>
 
+</body>
+</html>
 </body>
 </html>
