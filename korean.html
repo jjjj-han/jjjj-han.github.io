@@ -28,7 +28,7 @@
             gap: 20px;
         }
 
-.item {
+        .item {
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -42,15 +42,26 @@
             transform: scale(1.05);
         }
 
-        .item img {
+        /* 圖片外框：固定 3:4 長分型 */
+        .cover {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            aspect-ratio: 3 / 4;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* 圖片本身：完整顯示、不裁切 */
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .title {
             padding: 10px;
             text-align: center;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -63,12 +74,16 @@
 <div class="grid">
 
     <a class="item" href="#">
-        <img src="https://comicthumb-phinf.pstatic.net/20241231_283/pocket_1735630180625Pljop_JPEG/%BD%C3%B8%AE%C1%EE_%C6%F7%BD%BA%C5%CD_%BD%E6%B3%D7%C0%CF_690x1000.jpg">
-        <div class="title">冤家歐巴(오빠세끼)</div>
+        <div class="cover">
+            <img src="https://comicthumb-phinf.pstatic.net/20241231_283/pocket_1735630180625Pljop_JPEG/%BD%C3%B8%AE%C1%EE_%C6%F7%BD%BA%C5%CD_%BD%E6%B3%D7%C0%CF_690x1000.jpg" alt="冤家歐巴">
+        </div>
+        <div class="title">冤家歐巴 (오빠세끼)</div>
     </a>
 
     <a class="item" href="#">
-        <img src="https://shared-comic.pstatic.net/thumb/webtoon/805702/thumbnail/thumbnail_IMAG21_d862f8dd-6f21-4abf-a51c-7e00128aaae4.jpg">
+        <div class="cover">
+            <img src="https://shared-comic.pstatic.net/thumb/webtoon/805702/thumbnail/thumbnail_IMAG21_d862f8dd-6f21-4abf-a51c-7e00128aaae4.jpg" alt="토마토가 돼라!">
+        </div>
         <div class="title">토마토가 돼라!</div>
     </a>
 
