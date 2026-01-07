@@ -42,7 +42,6 @@
             transform: scale(1.05);
         }
 
-        /* 圖片外框：固定 3:4 長分型 */
         .cover {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -50,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* 圖片本身：完整顯示、不裁切 */
         .cover img {
             width: 100%;
             height: 100%;
@@ -63,6 +61,49 @@
             text-align: center;
             font-size: 15px;
         }
+
+        /* ===== 浮層 ===== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 20px 22px;
+            border-radius: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -73,55 +114,134 @@
 
 <div class="grid">
 
-    <!-- 範例作品（你可以自行替換圖片與作品名稱） -->
-    <a class="item" href="#">
+    <a class="item" href="#bungo">
         <div class="cover">
             <img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2689100001_o_20230905185041.jpg">
         </div>
         <div class="title">文豪野犬</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#cells">
         <div class="cover">
             <img src="https://p2.bahamut.com.tw/B/2KU/74/56bd61f66e92469c862dcb32eb1an825.PNG">
         </div>
         <div class="title">工作細胞</div>
     </a>
-    
-    <a class="item" href="#">
+
+    <a class="item" href="#mob">
         <div class="cover">
             <img src="https://img.linetv.tw/large/drama/14719-p_230412.png">
         </div>
         <div class="title">路人超能100</div>
     </a>
-    
-    <a class="item" href="#">
+
+    <a class="item" href="#saiki">
         <div class="cover">
             <img src="https://image.tmdb.org/t/p/original/vzTn8KKiuEhf9HyXXbPbbTySZve.jpg">
         </div>
-        <div class="title">齊木楠雄的災難.</div>
+        <div class="title">齊木楠雄的災難</div>
     </a>
-    
-    <a class="item" href="#">
+
+    <a class="item" href="#86">
         <div class="cover">
             <img src="https://img.linetv.tw/large/drama/12121-p.jpg">
         </div>
         <div class="title">86—不存在的戰區—</div>
-    </a> 
-    
-    <a class="item" href="#">
+    </a>
+
+    <a class="item" href="#aot">
         <div class="cover">
             <img src="https://www.niusnews.com/upload/imgs/default/2020DEC_PONYMASHARON/attacknew/attackfinalseasonnew1.jpg">
         </div>
         <div class="title">進擊的巨人</div>
     </a>
-    
-    <a class="item" href="#">
+
+    <a class="item" href="#hunter">
         <div class="cover">
             <img src="https://down-tw.img.susercontent.com/file/b2776fb4c8073160bfe9b2f0c1f68978">
         </div>
         <div class="title">HUNTER×HUNTER</div>
-    </a>=
+    </a>
+
+</div>
+
+<!-- ===== 浮層介紹 ===== -->
+
+<div id="bungo" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>文豪野犬</h2>
+        <p>
+以文學家角色為原型的異能戰鬥作品，
+風格獨特，角色魅力強烈。
+        </p>
+    </div>
+</div>
+
+<div id="cells" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>工作細胞</h2>
+        <p>
+將人體細胞擬人化，
+在輕鬆幽默中學習生理知識。
+        </p>
+    </div>
+</div>
+
+<div id="mob" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>路人超能100</h2>
+        <p>
+外表平凡的少年，
+卻擁有壓倒性的超能力。
+        </p>
+    </div>
+</div>
+
+<div id="saiki" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>齊木楠雄的災難</h2>
+        <p>
+最想過普通生活的超能力者，
+卻每天被迫捲入各種麻煩。
+        </p>
+    </div>
+</div>
+
+<div id="86" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>86—不存在的戰區—</h2>
+        <p>
+描寫戰爭與人性，
+氣氛沉重但非常震撼。
+        </p>
+    </div>
+</div>
+
+<div id="aot" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>進擊的巨人</h2>
+        <p>
+從生存戰鬥走向宏大世界觀，
+劇情反轉極多的經典作品。
+        </p>
+    </div>
+</div>
+
+<div id="hunter" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>HUNTER×HUNTER</h2>
+        <p>
+自由度極高的冒險漫畫，
+戰鬥系統與心理描寫極具深度。
+        </p>
+    </div>
 </div>
 
 </body>
