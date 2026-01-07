@@ -42,7 +42,6 @@
             transform: scale(1.05);
         }
 
-        /* 圖片外框：固定 3:4 長分型 */
         .cover {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -50,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* 圖片本身：完整顯示、不裁切 */
         .cover img {
             width: 100%;
             height: 100%;
@@ -63,6 +61,49 @@
             text-align: center;
             font-size: 15px;
         }
+
+        /* ===== 浮層樣式 ===== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 20px 22px;
+            border-radius: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -73,55 +114,122 @@
 
 <div class="grid">
 
-    <a class="item" href="#">
+    <a class="item" href="#jujutsu">
         <div class="cover">
-            <img src="https://media.vogue.com.tw/photos/64b4e5b1f1d4182137062b47/2:3/w_2560%2Cc_limit/%25E5%2592%2592%25E8%25A1%2593%25E5%259B%259E%25E6%2588%25B0.jpeg" alt="咒術迴戰">
+            <img src="https://media.vogue.com.tw/photos/64b4e5b1f1d4182137062b47/2:3/w_2560%2Cc_limit/%25E5%2592%2592%25E8%25A1%2593%25E5%259B%259E%25E6%2588%25B0.jpeg">
         </div>
         <div class="title">咒術迴戰</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#sakamoto">
         <div class="cover">
-            <img src="https://p2.bahamut.com.tw/B/2KU/83/0af7036114c1e4ec694fd417451vatr5.JPG?v=1754965951135" alt="坂本日常">
+            <img src="https://p2.bahamut.com.tw/B/2KU/83/0af7036114c1e4ec694fd417451vatr5.JPG?v=1754965951135">
         </div>
         <div class="title">坂本日常</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#hero">
         <div class="cover">
-            <img src="https://p2.bahamut.com.tw/B/2KU/19/0001361219.JPG" alt="我的英雄學院">
+            <img src="https://p2.bahamut.com.tw/B/2KU/19/0001361219.JPG">
         </div>
         <div class="title">我的英雄學院</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#kimetsu">
         <div class="cover">
-            <img src="https://p2.bahamut.com.tw/B/2KU/32/2a2b920034c8358d0f106b996b1kmzo5.JPG" alt="鬼滅之刃">
+            <img src="https://p2.bahamut.com.tw/B/2KU/32/2a2b920034c8358d0f106b996b1kmzo5.JPG">
         </div>
         <div class="title">鬼滅之刃</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#solo">
         <div class="cover">
-            <img src="https://i0.wp.com/news.qoo-app.com/wp-content/uploads/2022/07/FWw1AxoaAAAnL0O.jpg?resize=848%2C1200&ssl=1" alt="我獨自升級">
+            <img src="https://i0.wp.com/news.qoo-app.com/wp-content/uploads/2022/07/FWw1AxoaAAAnL0O.jpg">
         </div>
         <div class="title">我獨自升級</div>
     </a>
-    
-    <a class="item" href="#">
+
+    <a class="item" href="#onepunch">
         <div class="cover">
-            <img src="https://p2.bahamut.com.tw/B/2KU/35/8245c2a4ff6181ad9ec735fc571tdf75.JPG?v=1741317513553" alt="一拳超人">
+            <img src="https://p2.bahamut.com.tw/B/2KU/35/8245c2a4ff6181ad9ec735fc571tdf75.JPG?v=1741317513553">
         </div>
         <div class="title">一拳超人</div>
     </a>
-    
-    <a class="item" href="#">
-        <div class="cover">
-            <img src="https://p2.bahamut.com.tw/B/2KU/46/db6eb09e55adedaa1c074021091jp4m5.JPG?v=1671432376846" alt="肌肉魔法使">
-        </div>
-        <div class="title">肌肉魔法使</div>
-    </a>
-    
+
+</div>
+
+<!-- ===== 浮層內容 ===== -->
+
+<div id="jujutsu" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>咒術迴戰</h2>
+        <p>
+以咒術與詛咒為核心的黑暗王道作品。
+戰鬥張力強、角色塑造鮮明，
+世界觀殘酷但極具吸引力。
+        </p>
+    </div>
+</div>
+
+<div id="sakamoto" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>坂本日常</h2>
+        <p>
+前傳說級殺手的日常喜劇×戰鬥。
+節奏快、分鏡強，
+打戲又爽又好笑。
+        </p>
+    </div>
+</div>
+
+<div id="hero" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>我的英雄學院</h2>
+        <p>
+人人嚮往成為英雄的世界。
+描寫成長、友情與責任，
+是經典的現代王道代表。
+        </p>
+    </div>
+</div>
+
+<div id="kimetsu" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>鬼滅之刃</h2>
+        <p>
+以家人與情感為核心的斬鬼故事。
+畫風獨特、情緒渲染力極強，
+戰鬥與悲劇並存。
+        </p>
+    </div>
+</div>
+
+<div id="solo" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>我獨自升級</h2>
+        <p>
+主角一路變強的爽快升級流。
+戰鬥畫面華麗，
+非常有「一路輾壓」的快感。
+        </p>
+    </div>
+</div>
+
+<div id="onepunch" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>一拳超人</h2>
+        <p>
+最強卻最無聊的英雄。
+用搞笑包裝王道，
+戰鬥畫面卻異常震撼。
+        </p>
+    </div>
 </div>
 
 </body>
