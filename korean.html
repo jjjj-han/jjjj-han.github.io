@@ -42,7 +42,6 @@
             transform: scale(1.05);
         }
 
-        /* 圖片外框：固定 3:4 長分型 */
         .cover {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -50,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* 圖片本身：完整顯示、不裁切 */
         .cover img {
             width: 100%;
             height: 100%;
@@ -63,6 +61,49 @@
             text-align: center;
             font-size: 15px;
         }
+
+        /* ===== 浮層樣式 ===== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 20px 22px;
+            border-radius: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -73,34 +114,84 @@
 
 <div class="grid">
 
-    <a class="item" href="#">
+    <a class="item" href="#oppa">
         <div class="cover">
-            <img src="https://comicthumb-phinf.pstatic.net/20241231_283/pocket_1735630180625Pljop_JPEG/%BD%C3%B8%AE%C1%EE_%C6%F7%BD%BA%C5%CD_%BD%E6%B3%D7%C0%CF_690x1000.jpg" alt="冤家歐巴">
+            <img src="https://comicthumb-phinf.pstatic.net/20241231_283/pocket_1735630180625Pljop_JPEG/%BD%C3%B8%AE%C1%EE_%C6%F7%BD%BA%C5%CD_%BD%E6%B3%D7%C0%CF_690x1000.jpg">
         </div>
         <div class="title">冤家歐巴 (오빠세끼)</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#tomato">
         <div class="cover">
-            <img src="https://shared-comic.pstatic.net/thumb/webtoon/805702/thumbnail/thumbnail_IMAG21_d862f8dd-6f21-4abf-a51c-7e00128aaae4.jpg" alt="토마토가 돼라!">
+            <img src="https://shared-comic.pstatic.net/thumb/webtoon/805702/thumbnail/thumbnail_IMAG21_d862f8dd-6f21-4abf-a51c-7e00128aaae4.jpg">
         </div>
         <div class="title">토마토가 돼라!</div>
     </a>
 
-     <a class="item" href="#">
+    <a class="item" href="#guildidol">
         <div class="cover">
-            <img src="https://comicthumb-phinf.pstatic.net/20250110_7/pocket_1736490338479V2n3R_JPEG/%BD%C3%B8%AE%C1%EE_%C6%F7%BD%BA%C5%CD_%BD%E6%B3%D7%C0%CF_690x1000.jpg" alt="公會裡的偶像大大">
+            <img src="https://comicthumb-phinf.pstatic.net/20250110_7/pocket_1736490338479V2n3R_JPEG/%BD%C3%B8%AE%C1%EE_%C6%F7%BD%BA%C5%CD_%BD%E6%B3%D7%C0%CF_690x1000.jpg">
         </div>
-        <div class="title">公會裡的偶像大大(우리 길드 아이돌)</div>
+        <div class="title">公會裡的偶像大大</div>
     </a>
-    
-    <a class="item" href="#">
+
+    <a class="item" href="#princess">
         <div class="cover">
-            <img src="https://cdn.sounova.com/upload/g8cF9NoA7IXykUHrmnjsV.webp" alt="某天成為公主">
+            <img src="https://cdn.sounova.com/upload/g8cF9NoA7IXykUHrmnjsV.webp">
         </div>
         <div class="title">某天成為公主</div>
     </a>
-    
+
+</div>
+
+<!-- ===== 浮層介紹內容 ===== -->
+
+<div id="oppa" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>冤家歐巴（오빠세끼）</h2>
+        <p>
+歡喜冤家型戀愛喜劇。
+日常互嗆＋曖昧發酵，
+節奏輕快又可愛。
+        </p>
+    </div>
+</div>
+
+<div id="tomato" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>토마토가 돼라!</h2>
+        <p>
+風格獨特的青春成長故事。
+用誇張與隱喻描寫自我認同，
+情感細膩又帶點怪奇感。
+        </p>
+    </div>
+</div>
+
+<div id="guildidol" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>公會裡的偶像大大</h2>
+        <p>
+遊戲公會×偶像設定。
+虛擬與現實交錯，
+粉絲向又帶戀愛元素。
+        </p>
+    </div>
+</div>
+
+<div id="princess" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>某天成為公主</h2>
+        <p>
+轉生到小說世界的經典代表作。
+親情描寫動人，
+畫風華麗、情緒渲染力強。
+        </p>
+    </div>
 </div>
 
 </body>
