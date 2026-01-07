@@ -42,7 +42,6 @@
             transform: scale(1.05);
         }
 
-        /* 圖片外框：固定 3:4 長分型 */
         .cover {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -50,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* 圖片本身：完整顯示、不裁切 */
         .cover img {
             width: 100%;
             height: 100%;
@@ -63,6 +61,49 @@
             text-align: center;
             font-size: 15px;
         }
+
+        /* ===== 浮層樣式 ===== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 20px 22px;
+            border-radius: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -73,23 +114,31 @@
 
 <div class="grid">
 
-    <a class="item" href="#">
+    <!-- 作品卡片 -->
+    <a class="item" href="#conan">
         <div class="cover">
             <img src="https://p2.bahamut.com.tw/B/2KU/99/a70cedf0d7403b3fed69c06e241pvgv5.JPG" alt="名偵探柯南">
         </div>
         <div class="title">名偵探柯南</div>
     </a>
 
-    <a class="item" href="#">
-        <div class="cover">
-            <img src="https://picsum.photos/300/400?random=2" alt="作品名稱 2">
-        </div>
-        <div class="title">作品名稱 2</div>
-    </a>
-
 </div>
 
-</body>
-</html>
+<!-- ===== 浮層介紹 ===== -->
+<div id="conan" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>名偵探柯南</h2>
+        <p>
+高中生偵探被灌下神秘藥物後
+身體縮小成小學生。
+
+以推理破案為主軸，
+結合黑衣組織主線與日常案件，
+是經典長壽推理作品。
+        </p>
+    </div>
+</div>
+
 </body>
 </html>
