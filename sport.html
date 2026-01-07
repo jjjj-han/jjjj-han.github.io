@@ -42,7 +42,7 @@
             transform: scale(1.05);
         }
 
-        /* 圖片外框：固定 3:4 長分型 */
+        /* 圖片外框：3:4 */
         .cover {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -50,7 +50,7 @@
             overflow: hidden;
         }
 
-        /* 圖片本身：完整顯示、不裁切 */
+        /* 圖片本身：完整顯示 */
         .cover img {
             width: 100%;
             height: 100%;
@@ -63,6 +63,49 @@
             text-align: center;
             font-size: 15px;
         }
+
+        /* ===== 浮層 ===== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 20px 22px;
+            border-radius: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -73,27 +116,62 @@
 
 <div class="grid">
 
-    <a class="item" href="#">
+    <a class="item" href="#blue-lock">
         <div class="cover">
-            <img src="https://images.kktv.com.tw/covers/58/586922f5573d54e7496ea07e300e2f777e12f8cd.md.jpg" alt="藍色監獄">
+            <img src="https://images.kktv.com.tw/covers/58/586922f5573d54e7496ea07e300e2f777e12f8cd.md.jpg">
         </div>
         <div class="title">藍色監獄</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#haikyuu">
         <div class="cover">
-            <img src="https://cdn.kobo.com/book-images/7142df43-871e-4f8e-8130-1ef3e3776393/353/569/90/False/SX_oAqwNKDGi-QiUptyrzg.jpg" alt="排球少年">
+            <img src="https://cdn.kobo.com/book-images/7142df43-871e-4f8e-8130-1ef3e3776393/353/569/90/False/SX_oAqwNKDGi-QiUptyrzg.jpg">
         </div>
         <div class="title">排球少年</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#free">
         <div class="cover">
-            <img src="https://image1.gamme.com.tw/news2/2024/47/5/qZ6U06OXlNSasNmYlZ2dmI3Y1d4.webp" alt="Free! 男子游泳部">
+            <img src="https://image1.gamme.com.tw/news2/2024/47/5/qZ6U06OXlNSasNmYlZ2dmI3Y1d4.webp">
         </div>
         <div class="title">Free! 男子游泳部</div>
     </a>
 
+</div>
+
+<!-- ===== 浮層介紹 ===== -->
+
+<div id="blue-lock" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>藍色監獄</h2>
+        <p>
+以「自私前鋒」為核心概念的足球作品，
+競爭激烈、節奏快速。
+        </p>
+    </div>
+</div>
+
+<div id="haikyuu" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>排球少年</h2>
+        <p>
+熱血與友情並重的排球漫畫，
+角色成長刻畫細膩。
+        </p>
+    </div>
+</div>
+
+<div id="free" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>Free! 男子游泳部</h2>
+        <p>
+以游泳為主題的青春作品，
+情感描寫與角色關係是亮點。
+        </p>
+    </div>
 </div>
 
 </body>
