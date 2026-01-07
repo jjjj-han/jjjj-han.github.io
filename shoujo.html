@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -42,7 +42,6 @@
             transform: scale(1.05);
         }
 
-        /* 圖片外框：固定 3:4 長分型 */
         .cover {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -50,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* 圖片本身：完整顯示、不裁切 */
         .cover img {
             width: 100%;
             height: 100%;
@@ -63,6 +61,49 @@
             text-align: center;
             font-size: 15px;
         }
+
+        /* ===== 浮層 ===== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 20px 22px;
+            border-radius: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -73,69 +114,170 @@
 
 <div class="grid">
 
-    <a class="item" href="#">
+    <a class="item" href="#ane-friend">
         <div class="cover">
-            <img src="https://public-img-comic.pximg.net/c!/f=webp:auto,w=256,q=75/images/work_main/8792.jpg?20250425135540" alt="姐姐的朋友有夠煩">
+            <img src="https://public-img-comic.pximg.net/c!/f=webp:auto,w=256,q=75/images/work_main/8792.jpg">
         </div>
-        <div class="title">姐姐的朋友有夠煩（姉ちゃんの友達がうざい話）</div>
+        <div class="title">姐姐的朋友有夠煩</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#love-sister">
         <div class="cover">
-            <img src="https://public-img-comic.pximg.net/c!/f=webp:auto,w=256,q=75/images/work_main/8755.jpg?20250425135506" alt="愛上姊姊的朋友">
+            <img src="https://public-img-comic.pximg.net/c!/f=webp:auto,w=256,q=75/images/work_main/8755.jpg">
         </div>
-        <div class="title">愛上姊姊的朋友（友達の姉ちゃんに恋した話）</div>
+        <div class="title">愛上姊姊的朋友</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#yamada">
         <div class="cover">
-            <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1681244963i/125925630.jpg" alt="和山田談場Lv999的戀愛">
+            <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1681244963i/125925630.jpg">
         </div>
         <div class="title">和山田談場 Lv999 的戀愛</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#onoff">
         <div class="cover">
-            <img src="https://img.91app.com/webapi/imagesV3/Original/SalePage/10117677/0/638780760130100000?v=1" alt="公司和私生活">
+            <img src="https://img.91app.com/webapi/imagesV3/Original/SalePage/10117677/0/638780760130100000?v=1">
         </div>
-        <div class="title">公司和私生活－ON AND OFF</div>
+        <div class="title">公司和私生活</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#opposite">
         <div class="cover">
-            <img src="https://s.eslite.com/b2b/vendor/vendor175928703480320251001105037/mainCoverImage1_1531677.jpg" alt="相反的你和我">
+            <img src="https://s.eslite.com/b2b/vendor/vendor175928703480320251001105037/mainCoverImage1_1531677.jpg">
         </div>
         <div class="title">相反的你和我</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#firefly">
         <div class="cover">
-            <img src="https://s.eslite.com/b2b/vendor/vendor175219928687020250711100130/mainCoverImage1_1474197.jpg" alt="螢火蟲的出嫁">
+            <img src="https://s.eslite.com/b2b/vendor/vendor175219928687020250711100130/mainCoverImage1_1474197.jpg">
         </div>
         <div class="title">螢火蟲的出嫁</div>
     </a>
 
-    <a class="item" href="#">
+    <a class="item" href="#tamon">
         <div class="cover">
-            <img src="https://s.eslite.com/b2b/vendor/vendor172109473667820240716095219/mainCoverImage1_1288362.jpg" alt="現在的是哪一個多聞!?">
+            <img src="https://s.eslite.com/b2b/vendor/vendor172109473667820240716095219/mainCoverImage1_1288362.jpg">
         </div>
         <div class="title">現在的是哪一個多聞!?</div>
     </a>
 
-     <a class="item" href="#">
+    <a class="item" href="#face">
         <div class="cover">
-            <img src="https://www.hakusensha.co.jp/wp_hakusensha/postimage/2023/01/9784592228806.jpg" alt="喜歡你，不是因為你長得帥">
+            <img src="https://www.hakusensha.co.jp/wp_hakusensha/postimage/2023/01/9784592228806.jpg">
         </div>
         <div class="title">喜歡你，不是因為你長得帥</div>
     </a>
 
-     <a class="item" href="#">
+    <a class="item" href="#kaoru">
         <div class="cover">
-            <img src="https://media.eiga.com/images/anime/news/123498/photo/e4dfbf0fc4d24200/640.jpg" alt="喜歡你，不是因為你長得帥">
+            <img src="https://media.eiga.com/images/anime/news/123498/photo/e4dfbf0fc4d24200/640.jpg">
         </div>
         <div class="title">薰香花朵凜然綻放</div>
-     </a>
-                              
+    </a>
+
+</div>
+
+<!-- ===== 浮層介紹 ===== -->
+
+<div id="ane-friend" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>姐姐的朋友有夠煩</h2>
+        <p>
+輕鬆日常向戀愛漫畫，
+以吐槽與溫柔氣氛為主。
+        </p>
+    </div>
+</div>
+
+<div id="love-sister" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>愛上姊姊的朋友</h2>
+        <p>
+年齡差與單戀元素，
+帶點酸甜的青春戀愛故事。
+        </p>
+    </div>
+</div>
+
+<div id="yamada" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>和山田談場 Lv999 的戀愛</h2>
+        <p>
+電玩×戀愛的組合，
+角色互動自然又可愛。
+        </p>
+    </div>
+</div>
+
+<div id="onoff" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>公司和私生活</h2>
+        <p>
+描寫上班族戀愛，
+公私反差是最大看點。
+        </p>
+    </div>
+</div>
+
+<div id="opposite" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>相反的你和我</h2>
+        <p>
+性格完全不同的兩人，
+慢慢拉近距離的故事。
+        </p>
+    </div>
+</div>
+
+<div id="firefly" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>螢火蟲的出嫁</h2>
+        <p>
+帶有懸疑氣氛的戀愛作品，
+情感描寫細膩。
+        </p>
+    </div>
+</div>
+
+<div id="tamon" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>現在的是哪一個多聞!?</h2>
+        <p>
+偶像與粉絲的反差日常，
+節奏輕快又有趣。
+        </p>
+    </div>
+</div>
+
+<div id="face" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>喜歡你，不是因為你長得帥</h2>
+        <p>
+重視內在價值的戀愛故事，
+情感真誠。
+        </p>
+    </div>
+</div>
+
+<div id="kaoru" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">×</a>
+        <h2>薰香花朵凜然綻放</h2>
+        <p>
+氣氛溫柔的青春戀愛作品，
+畫風與情感都很細膩。
+        </p>
+    </div>
 </div>
 
 </body>
